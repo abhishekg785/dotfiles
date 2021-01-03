@@ -100,7 +100,9 @@ Plug 'APZelos/blamer.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+
+Plug 'mattn/vim-goimports'
 
 call plug#end()
 " }}}
@@ -196,7 +198,6 @@ let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
 " quick scope
-
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 augroup qs_colors
@@ -204,6 +205,9 @@ augroup qs_colors
   autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
   autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 augroup END
+
+" enable auto format when write (default)
+let g:goimports = 1
 
 " }}}
 
@@ -239,7 +243,7 @@ lua require('telescope').setup({defaults = {file_sorter = require('telescope.sor
 
 nnoremap <leader>pw :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
 nnoremap <leader>pb :lua require('telescope.builtin').buffers()<CR>
-nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
+nnoremap <leader>ph :lua require('telescope.builtin').help_tags()<CR>
 nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
 nnoremap <Leader>pf :lua require('telescope.builtin').find_files()<CR>

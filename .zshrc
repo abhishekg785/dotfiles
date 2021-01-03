@@ -118,3 +118,5 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH="/home/hiro/go"
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+
+eval "$(starship init zsh)"
