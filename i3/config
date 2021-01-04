@@ -218,6 +218,10 @@ bindsym $mod+minus gaps inner current minus 5
 # lock screen
 bindsym $mod+z exec betterlockscreen -l blur --off 180
 
+# screenshot
+bindsym Print exec maim > ~/screenshots/full_$(date +%Y-%m-%d_%H:%M:%S).png
+bindsym $mod+Print exec maim -u -s > ~/screenshots/region_$(date +%Y-%m-%d_%H:%M:%S).png
+
 # Lock screen after inactivity
 exec xidlehook \
         --not-when-fullscreen \
