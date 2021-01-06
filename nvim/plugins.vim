@@ -13,7 +13,6 @@ try
     Plug 'lambdalisue/fern.vim'
     Plug 'machakann/vim-highlightedyank'
 
-    Plug 'kana/vim-arpeggio'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'unblevable/quick-scope'
     Plug 'ntpeters/vim-better-whitespace'
@@ -61,9 +60,6 @@ let g:goimports = 1
 " }}}
 
 " plugin specific map {{{
-
-" arpeggio mappings
-call arpeggio#map('i', '', 0, 'jk', '<Esc>')
 
 " undotree
 nnoremap <leader>u :UndotreeShow<CR>

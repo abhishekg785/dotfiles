@@ -31,10 +31,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <Leader>pi :PlugInstall<CR>
 
 " no more pesky escape (for insert and visual mode)
-imap kj <Esc>
-imap kJ <Esc>
-imap Kj <Esc>
-imap KJ <Esc>
+imap jj <Esc>
 
 " move between like butter
 nnoremap <leader>h :wincmd h<CR>
