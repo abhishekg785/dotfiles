@@ -1,3 +1,5 @@
+" vim: foldmethod=marker
+
 try
     call plug#begin('~/.config/nvim/plugged')
 
@@ -94,13 +96,13 @@ nnoremap <Leader>pf :lua require('telescope.builtin').find_files()<CR>
 " }}}
 
 " git{{{
-" nmap <leader>gr :diffget //3<CR>
-" nmap <leader>gl :diffget //2<CR>
 nmap <leader>gs :G<CR>
 nmap <leader>gv :Gdiff<CR>
 nmap <leader>gf :Flog<CR>
 nmap <leader>gb :Gblame<CR>
 nmap <leader>gcm :Gcommit<CR>
+nmap <leader>gr :diffget //3<CR>
+nmap <leader>gl :diffget //2<CR>
 
 " git gutter
 let g:gitgutter_enabled = 1

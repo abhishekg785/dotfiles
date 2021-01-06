@@ -1,3 +1,6 @@
+set modeline
+set modelines=5
+
 set nocompatible
 filetype plugin on
 
