@@ -44,7 +44,7 @@ set ignorecase
 set noswapfile
 set smartcase
 set scrolloff=3
-set clipboard+=unnamed
+set clipboard=unnamedplus
 set nojoinspaces
 set listchars=eol:¬,tab:\→\ ,trail:~,extends:>,precedes:<,nbsp:•
 set updatetime=1000
