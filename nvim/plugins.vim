@@ -25,7 +25,6 @@ try
     Plug 'rbong/vim-flog'
     Plug 'airblade/vim-gitgutter'
     Plug 'danishprakash/vim-githubinator'
-    Plug 'APZelos/blamer.nvim'
 
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/completion-nvim'
@@ -108,9 +107,5 @@ let g:gitgutter_enabled = 1
 let g:gitgutter_map_keys = 0
 nmap ) <Plug>(GitGutterNextHunk)
 nmap ( <Plug>(GitGutterPrevHunk)
-
-" git blamer
-let g:blamer_enabled = 1
-let g:blamer_show_in_visual_modes = 0
 
 " }}}
