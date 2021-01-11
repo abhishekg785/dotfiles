@@ -222,6 +222,9 @@ bindsym $mod+z exec betterlockscreen -l blur --off 180
 bindsym Print exec maim > ~/screenshots/full_$(date +%Y-%m-%d_%H:%M:%S).png
 bindsym $mod+Print exec maim -u -s > ~/screenshots/region_$(date +%Y-%m-%d_%H:%M:%S).png
 
+# Programs that should run on i3 startup
+exec_always --no-startup-id feh --bg-scale ~/Wallpapers/monument-valley.png
+
 # Lock screen after inactivity
 exec xidlehook \
         --not-when-fullscreen \
