@@ -5,6 +5,7 @@ set nocompatible
 filetype plugin on
 
 set number
+set guicursor=
 set encoding=utf8
 set ffs=unix,dos
 
@@ -43,7 +44,7 @@ set expandtab
 set ignorecase
 set noswapfile
 set smartcase
-set scrolloff=3
+set scrolloff=8
 set clipboard=unnamedplus
 set nojoinspaces
 set listchars=eol:¬,tab:\→\ ,trail:~,extends:>,precedes:<,nbsp:•
@@ -51,11 +52,13 @@ set updatetime=1000
 set autoread
 set nobackup
 set undodir=~/.vim/undodir
+set undofile
 set colorcolumn=80
 set completeopt=menuone,noinsert,noselect
 
 " Treat :W as :w since this is a common typo
 cnoreabbrev W w
+cnoreabbrev Q q
 
 set ttimeoutlen=100
 
