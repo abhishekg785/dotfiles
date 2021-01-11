@@ -35,6 +35,9 @@ try
 
     Plug 'mattn/vim-goimports'
 
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
+
     call plug#end()
 catch
     echom 'vim-plug not installed'
