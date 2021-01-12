@@ -11,7 +11,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Quickly clear highlighted matches
-map <silent> <Leader><Leader> :nohl<CR>
+map <silent> <leader><leader> :nohl<CR>
 " Automatically repeat the last visual selection after indenting
 vnoremap < <gv
 vnoremap > >gv
@@ -28,7 +28,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " install plugin command
-nnoremap <Leader>pi :PlugInstall<CR>
+nnoremap <leader>pi :PlugInstall<CR>
 
 " no more pesky escape (for insert and visual mode)
 imap jj <Esc>
@@ -68,10 +68,10 @@ noremap <Right> <Nop>
 nnoremap <leader>th :set hlsearch!<cr>
 
 " use clipboard and primary clipboard
-noremap <Leader>y "*y
-noremap <Leader>pp "*p
-noremap <Leader>Y "+y
-noremap <Leader>P "+p
+noremap <leader>y "*y
+noremap <leader>pp "*p
+noremap <leader>Y "+y
+noremap <leader>P "+p
 
 " add new line up and down without insert mode
 " nmap <C-o> O<Esc>

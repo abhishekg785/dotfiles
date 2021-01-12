@@ -12,7 +12,6 @@ try
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
 
-    Plug 'lambdalisue/fern.vim'
     Plug 'machakann/vim-highlightedyank'
 
     Plug 'editorconfig/editorconfig-vim'
@@ -67,9 +66,6 @@ let g:goimports = 1
 
 " undotree
 nnoremap <leader>u :UndotreeShow<CR>
-
-" fern.vim
-nnoremap <C-f> :Fern . -reveal=% -drawer -toggle -width=35<CR>
 
 " }}}
 
