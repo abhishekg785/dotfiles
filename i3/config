@@ -224,6 +224,7 @@ bindsym $mod+Print exec maim -u -s > ~/screenshots/region_$(date +%Y-%m-%d_%H:%M
 
 # Programs that should run on i3 startup
 exec_always --no-startup-id feh --bg-scale ~/Wallpapers/monument-valley.png
+exec --no-startup-id compton --config ~/.compton.conf -b
 
 # Lock screen after inactivity
 exec xidlehook \
