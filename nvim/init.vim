@@ -14,6 +14,4 @@ source ~/.config/nvim/netrw.vim
 source ~/.config/nvim/treesitter.vim
 
 " lsp
-source ~/.config/nvim/lua/lsp.vim
-
-lua require('hello')
+lua require('lsp_config')

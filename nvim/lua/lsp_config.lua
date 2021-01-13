@@ -1,0 +1,59 @@
+local lsp = require'lspconfig'
+
+local map = function(type, key, value)
+    vim.fn.nvim_buf_set_keymap(0, type, key, value, {noremap=true, silent=true});
+end
+
+-- configuring LSP servers
+local on_attach_common = function(_)
+    print("LSP started.")
+
+    -- Goto mappings
+    map('n', '<leader>va', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+    map('n', '<leader>vd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+    map('n', '<leader>vi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+    map('n', '<leader>vsh', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+    map('n', '<leader>vrr', '<cmd>lua vim.lsp.buf.references()<CR>')
+    map('n', '<leader>vtd', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+
+    -- Action mappings
+    map('n', '<leader>vrn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+    map('n', '<leader>vh', '<cmd>lua vim.lsp.buf.hover()<CR>')
+    map('n', '<leader>vca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+    map('n', '<leader>vsd', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
+
+    -- Few language server support these atm
+    map('n', '<leader>vbf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+    map('n', '<leader>ai', '<cmd>lua vim.lsp.buf.incoming_calls()<CR>')
+    map('n', '<leader>ao', '<cmd>lua vim.lsp.buf.outgoing_calls()<CR>')
+end
+
+lsp.tsserver.setup{ on_attach=on_attach_common }
+lsp.gopls.setup{ on_attach=on_attach_common }
+lsp.rls.setup{ on_attach=on_attach_common }
+lsp.clangd.setup{ on_attach=on_attach_common }
+lsp.intelephense.setup{ on_attach=on_attach_common }
+lsp.pyls.setup{ on_attach=on_attach_common }
+
+local system_name
+if vim.fn.has("mac") == 1 then
+    system_name = "macOS"
+elseif vim.fn.has("unix") == 1 then
+    system_name = "Linux"
+elseif vim.fn.has("win32") == 1 then
+    system_name = "Windows"
+else
+    print("Unsupported system for lua sumneko")
+end
+local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/sumneko_lua/lua-language-server'
+local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
+require'lspconfig'.sumneko_lua.setup {
+    cmd={ sumneko_binary, "-E", sumneko_root_path .. "/main.lua" };
+    on_attach=on_attach_common
+}
+
+-- handle auto completion
+vim.cmd('autocmd BufEnter * lua require\'completion\'.on_attach()')
+
+-- handle code references using telescope
+vim.lsp.handlers["textDocument/references"] = require("telescope.builtin").lsp_references
