@@ -2,7 +2,7 @@
 source ~/.config/nvim/settings.vim
 
 " plugins
-source ~/.config/nvim/plugins.vim
+lua require('plugins')
 
 " vim specific maps
 source ~/.config/nvim/mappings.vim
