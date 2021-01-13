@@ -1,12 +1,15 @@
 local lsp = require'lspconfig'
+local completion = require'completion'
 
 local map = function(type, key, value)
     vim.fn.nvim_buf_set_keymap(0, type, key, value, {noremap=true, silent=true});
 end
 
 -- configuring LSP servers
-local on_attach_common = function(_)
+local custom_attach  = function(client)
     print("LSP started.")
+
+    completion.on_attach(client);
 
     -- Goto mappings
     map('n', '<leader>va', '<cmd>lua vim.lsp.buf.declaration()<CR>')
@@ -28,12 +31,12 @@ local on_attach_common = function(_)
     map('n', '<leader>ao', '<cmd>lua vim.lsp.buf.outgoing_calls()<CR>')
 end
 
-lsp.tsserver.setup{ on_attach=on_attach_common }
-lsp.gopls.setup{ on_attach=on_attach_common }
-lsp.rls.setup{ on_attach=on_attach_common }
-lsp.clangd.setup{ on_attach=on_attach_common }
-lsp.intelephense.setup{ on_attach=on_attach_common }
-lsp.pyls.setup{ on_attach=on_attach_common }
+lsp.tsserver.setup{ on_attach=custom_attach  }
+lsp.gopls.setup{ on_attach=custom_attach  }
+lsp.rls.setup{ on_attach=custom_attach  }
+lsp.clangd.setup{ on_attach=custom_attach  }
+lsp.intelephense.setup{ on_attach=custom_attach  }
+lsp.pyls.setup{ on_attach=custom_attach  }
 
 local system_name
 if vim.fn.has("mac") == 1 then
@@ -49,11 +52,8 @@ local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/sumneko_lua/lua-l
 local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
 require'lspconfig'.sumneko_lua.setup {
     cmd={ sumneko_binary, "-E", sumneko_root_path .. "/main.lua" };
-    on_attach=on_attach_common
+    on_attach=custom_attach
 }
-
--- handle auto completion
-vim.cmd('autocmd BufEnter * lua require\'completion\'.on_attach()')
 
 -- handle code references using telescope
 vim.lsp.handlers["textDocument/references"] = require("telescope.builtin").lsp_references
