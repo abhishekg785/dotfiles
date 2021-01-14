@@ -8,3 +8,4 @@
 - tmux
 - starship
 - zsh
+- compton
