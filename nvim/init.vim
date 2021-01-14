@@ -7,8 +7,6 @@ lua require('plugins')
 " vim specific maps
 source ~/.config/nvim/mappings.vim
 
-" netrw
-source ~/.config/nvim/netrw.vim
-
+lua require('netrw')
 lua require('lsp_config')
 lua require('treesitter')
