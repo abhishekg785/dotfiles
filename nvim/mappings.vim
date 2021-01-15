@@ -98,8 +98,11 @@ augroup qs_colors
   autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 augroup END
 
-" enable auto format when write (default)
+" enable auto format when write
 let g:goimports = 1
+
+" ultisnips snippets support
+let g:completion_enable_snippet = "UltiSnips"
 
 " }}}
 

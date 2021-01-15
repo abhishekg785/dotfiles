@@ -27,6 +27,8 @@ plug {
     'danishprakash/vim-githubinator',
     'neovim/nvim-lspconfig',
     'nvim-lua/completion-nvim',
+    'sirver/ultisnips',
+    'honza/vim-snippets',
     'vim-airline/vim-airline',
     'mattn/vim-goimports',
     'nvim-treesitter/nvim-treesitter',
