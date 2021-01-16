@@ -1,3 +1,5 @@
+-- vim:fileencoding=utf-8:ft=lua:foldmethod=marker
+
 local function nmap(command, value, expr)
     vim.fn.nvim_set_keymap('n', command, value, {noremap = true, silent = true, expr = expr})
 end
@@ -14,6 +16,7 @@ local function tmap(command, value, expr)
     vim.fn.nvim_set_keymap('t', command, value, {noremap = true, silent = true, expr = expr})
 end
 
+-- vim specific maps {{{
 -- Swap ' and ` so 'a goes to the line *and* column marked with ma
 vim.cmd("nnoremap ' `");
 vim.cmd("nnoremap ` '");
@@ -83,6 +86,7 @@ nmap('<leader>P', '"+p')
 -- add new line up and down without insert mode
 -- nmap('<C-o>','O<Esc>')
 nmap('<CR>','o<Esc>')
+-- }}}
 
 return {
     nmap=nmap,
