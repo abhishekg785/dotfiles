@@ -88,6 +88,22 @@ nmap('<leader>P', '"+p')
 nmap('<CR>','o<Esc>')
 -- }}}
 
+-- git specific maps{{{
+nmap('<leader>gs', ':G<CR>')
+nmap('<leader>gv', ':Gdiff<CR>')
+nmap('<leader>gf', ':Flog<CR>')
+nmap('<leader>gb', ':Gblame<CR>')
+nmap('<leader>gcm',':Gcommit<CR>')
+nmap('<leader>gr', ':diffget //3<CR>')
+nmap('<leader>gl', ':diffget //2<CR>')
+
+-- git gutter
+vim.g.gitgutter_enabled = 1
+vim.g.gitgutter_map_keys = 0
+nmap(")", "<Plug>(GitGutterNextHunk)")
+nmap("(", "<Plug>(GitGutterPrevHunk)")
+-- }}}
+
 return {
     nmap=nmap,
     imap=imap,

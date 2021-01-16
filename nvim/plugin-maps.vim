@@ -54,20 +54,3 @@ nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
 nnoremap <Leader>pf :lua require('telescope.builtin').find_files()<CR>
 " }}}
-
-" git{{{
-nmap <leader>gs :G<CR>
-nmap <leader>gv :Gdiff<CR>
-nmap <leader>gf :Flog<CR>
-nmap <leader>gb :Gblame<CR>
-nmap <leader>gcm :Gcommit<CR>
-nmap <leader>gr :diffget //3<CR>
-nmap <leader>gl :diffget //2<CR>
-
-" git gutter
-let g:gitgutter_enabled = 1
-let g:gitgutter_map_keys = 0
-nmap ) <Plug>(GitGutterNextHunk)
-nmap ( <Plug>(GitGutterPrevHunk)
-
-" }}}
