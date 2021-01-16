@@ -1,7 +1,4 @@
-" settings
-source ~/.config/nvim/settings.vim
-
-" plugins
+lua require('settings')
 lua require('plugins')
 
 " vim specific maps
