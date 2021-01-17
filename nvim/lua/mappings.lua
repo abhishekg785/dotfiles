@@ -35,10 +35,9 @@ nmap('k', 'gk')
 nmap('<c-s>', ':w<CR>')
 imap('<c-s>', '<Esc>:w<CR>')
 
--- edit and source vimrc file
-nmap('<leader>ev', ':vsplit $MYVIMRC<cr>')
-nmap('<leader>sv', ':source $MYVIMRC<cr>')
+-- install plugins
 nmap('<leader>pi', ':PlugInstall<CR>')
+nmap('<leader>pc', ':PlugClean<CR>')
 
 -- no more pesky escape (for insert and visual mode)
 imap('jj', '<Esc>')
@@ -129,7 +128,7 @@ vim.g.completion_enable_snippet = "UltiSnips"
 
 -- plugin specific maps {{{
 -- undotree
-nmap('<leader>u', ':UndotreeShow<CR>')
+nmap('<leader>u', ':UndotreeToggle<CR>')
 -- }}}
 
 -- gutentags {{{
