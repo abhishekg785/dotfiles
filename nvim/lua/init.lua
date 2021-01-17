@@ -10,5 +10,8 @@ P = function(v)
   return v
 end
 
+require('hiro.lsp_config')
+require('hiro.treesitter')
+
 require('hiro.telescope')
 require('hiro.telescope.mappings')

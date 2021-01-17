@@ -1,6 +1,3 @@
 require('settings')
 require('plugins')
 require('mappings')
-require('netrw')
-require('treesitter')
-require('lsp_config')
