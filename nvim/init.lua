@@ -1,0 +1,6 @@
+require('settings')
+require('plugins')
+require('mappings')
+require('netrw')
+require('lsp_config')
+require('treesitter')

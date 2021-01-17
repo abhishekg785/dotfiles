@@ -67,4 +67,4 @@ require'lspconfig'.sumneko_lua.setup {
 }
 
 -- handle code references using telescope
-vim.lsp.handlers["textDocument/references"] = require("telescope.builtin").lsp_references
+-- vim.lsp.handlers["textDocument/references"] = require("telescope.builtin").lsp_references

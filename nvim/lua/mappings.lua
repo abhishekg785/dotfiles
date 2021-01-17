@@ -104,6 +104,48 @@ nmap(")", "<Plug>(GitGutterNextHunk)")
 nmap("(", "<Plug>(GitGutterPrevHunk)")
 -- }}}
 
+-- plugin specific set{{{
+
+-- vim better whitespace
+vim.g.better_whitespace_enabled=1
+vim.g.strip_whitespace_on_save=1
+
+-- quick scope
+vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'}
+
+vim.cmd[[augroup qs_colors]]
+  vim.cmd[[autocmd!]]
+  vim.cmd[[autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline]]
+  vim.cmd[[autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline]]
+vim.cmd[[augroup END]]
+
+-- enable auto format when write
+vim.g.goimports = 1
+
+-- ultisnips snippets support
+vim.g.completion_enable_snippet = "UltiSnips"
+
+-- }}}
+
+-- plugin specific maps {{{
+-- undotree
+nmap('<leader>u', ':UndotreeShow<CR>')
+-- }}}
+
+-- gutentags {{{
+vim.g.gutentags_ctags_executable = "/usr/local/bin/ctags"
+vim.g.tagbar_ctags_bin = "/usr/local/bin/ctags"
+
+-- generate datebases in my cache directory, prevent gtags files polluting my project
+vim.g.gutentags_cache_dir = vim.fn.expand('~/.cache/tags')
+
+-- change focus to quickfix window after search (optional).
+vim.g.gutentags_plus_switch = 1
+
+vim.g.gutentags_ctags_exclude = {'*.css', '*.html', 'node_modules'}
+vim.g.gutentags_ctags_extra_args = {'--fields=+ainKz'}
+-- }}}
+
 return {
     nmap=nmap,
     imap=imap,
