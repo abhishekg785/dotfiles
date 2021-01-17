@@ -82,6 +82,10 @@ nmap('<leader>pp', '"*p')
 nmap('<leader>Y', '"+y')
 nmap('<leader>P', '"+p')
 
+-- tab control
+nmap('<A-l>', ':tabnext<CR>')
+nmap('<A-h>', ':tabprevious<CR>')
+
 -- add new line up and down without insert mode
 -- nmap('<C-o>','O<Esc>')
 nmap('<CR>','o<Esc>')
