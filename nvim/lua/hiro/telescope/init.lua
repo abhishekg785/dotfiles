@@ -2,6 +2,7 @@ local should_reload = true
 local reloader = function()
   if should_reload then
     RELOAD('plenary')
+    RELOAD('popup')
     RELOAD('telescope')
   end
 end
@@ -86,7 +87,7 @@ function M.builtin()
   require('telescope.builtin').builtin()
 end
 
-function M.git_files()
+function M.git_files_dropdown()
   local opts = themes.get_dropdown {
     winblend = 10,
     border = true,
@@ -95,6 +96,10 @@ function M.git_files()
   }
 
   require('telescope.builtin').git_files(opts)
+end
+
+function M.git_files()
+  require('telescope.builtin').git_files()
 end
 
 function M.lsp_code_actions()

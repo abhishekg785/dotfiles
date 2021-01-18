@@ -155,7 +155,7 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 vim.g.netrw_localrmdir = 'rm -r'
 
-nmap('<leader>f', ':Sex!<CR>')
+nmap('<leader>ff', ':Sex!<CR>')
 -- }}}
 return {
     nmap=nmap,
