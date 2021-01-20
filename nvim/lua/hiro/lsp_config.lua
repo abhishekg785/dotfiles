@@ -37,6 +37,14 @@ lsp.rls.setup{ on_attach=custom_attach  }
 lsp.clangd.setup{ on_attach=custom_attach  }
 lsp.intelephense.setup{ on_attach=custom_attach  }
 lsp.pyls.setup{ on_attach=custom_attach  }
+lsp.cssls.setup{ on_attach=custom_attach }
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+lsp.html.setup{
+    capabilities=capabilities,
+    on_attach=custom_attach
+}
 
 local system_name
 if vim.fn.has("mac") == 1 then
