@@ -151,6 +151,10 @@ vim.g.gutentags_ctags_extra_args = {'--fields=+ainKz'}
 
 -- netrw {{{
 vim.g.netrw_browse_split = 2
+
+-- list file as tree view
+vim.g.netrw_liststyle = 3
+
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 vim.g.netrw_localrmdir = 'rm -r'
