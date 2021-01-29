@@ -13,6 +13,8 @@ local map_tele = function(key, f, options, buffer)
   end
 end
 
+vim.api.nvim_set_keymap('c', '<c-r><c-r>', '<Plug>(TelescopeFuzzyCommandSearch)', { noremap = false, nowait = true })
+
 map_tele('<leader>en', 'edit_neovim')
 
 map_tele('<leader>fb', 'buffers')
@@ -29,7 +31,12 @@ map_tele('<leader>fg', 'live_grep')
 map_tele('<leader>fo', 'oldfiles')
 map_tele('<leader>fd', 'fd')
 map_tele('<leader>ps', 'project_search')
-map_tele('<leader>pw', 'project_word')
+map_tele('<leader>pw', 'grep_string', {
+  short_path = true,
+  word_match = '-w',
+  only_sort_text = true
+})
+
 
 -- Telescope Meta
 map_tele('<leader>fB', 'builtin')

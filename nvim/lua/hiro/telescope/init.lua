@@ -10,6 +10,7 @@ end
 reloader()
 
 local actions = require('telescope.actions')
+local sorters = require('telescope.sorters')
 local themes = require('telescope.themes')
 
 require('telescope').setup {
@@ -56,6 +57,8 @@ require('telescope').setup {
       { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
       preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
     },
+
+    file_sorter = sorters.get_fzy_sorter,
 
     file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
     grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
@@ -135,12 +138,6 @@ function M.project_search()
     previewer = false,
     layout_strategy = "vertical",
     cwd = require('lspconfig').util.root_pattern(".git")(vim.fn.expand("%:p")),
-  }
-end
-
-function M.project_word()
-  require('telescope.builtin').grep_string {
-      search = vim.fn.expand("<cword>")
   }
 end
 
