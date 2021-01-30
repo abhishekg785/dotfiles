@@ -1,6 +1,8 @@
 local lsp = require'lspconfig'
 local completion = require'completion'
 
+local telescope_mapper = require('hiro.telescope.mappings')
+
 local map = function(type, key, value)
     vim.fn.nvim_buf_set_keymap(0, type, key, value, {noremap=true, silent=true});
 end
@@ -18,6 +20,12 @@ local custom_attach  = function(client)
     map('n', '<leader>vsh', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
     map('n', '<leader>vrr', '<cmd>lua vim.lsp.buf.references()<CR>')
     map('n', '<leader>vtd', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+
+    telescope_mapper('<leader>vrr', 'lsp_references', {
+        sorting_strategy = "ascending",
+        prompt_position = "top",
+        ignore_filename = true,
+    }, true)
 
     -- Action mappings
     map('n', '<leader>vrn', '<cmd>lua vim.lsp.buf.rename()<CR>')
