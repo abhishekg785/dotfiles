@@ -10,7 +10,7 @@ P = function(v)
   return v
 end
 
-require('hiro.lsp_config')
+require('hiro.lsp')
 require('hiro.treesitter')
 
 require('hiro.telescope')
