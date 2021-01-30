@@ -1,7 +1,7 @@
 vim.cmd [[packadd vimball]]
 
+require('hiro.plugins')
 require('settings')
-require('plugins')
 require('mappings')
 
 require('hiro.globals')
