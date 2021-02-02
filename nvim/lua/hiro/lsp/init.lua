@@ -18,7 +18,6 @@ local custom_attach  = function(client)
     map('n', '<leader>vd', '<cmd>lua vim.lsp.buf.definition()<CR>')
     map('n', '<leader>vi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
     map('n', '<leader>vsh', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
-    map('n', '<leader>vrr', '<cmd>lua vim.lsp.buf.references()<CR>')
     map('n', '<leader>vtd', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
 
     telescope_mapper('<leader>vrr', 'lsp_references', {
@@ -30,8 +29,10 @@ local custom_attach  = function(client)
     -- Action mappings
     map('n', '<leader>vrn', '<cmd>lua vim.lsp.buf.rename()<CR>')
     map('n', '<leader>vh', '<cmd>lua vim.lsp.buf.hover()<CR>')
-    map('n', '<leader>vca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
     map('n', '<leader>vsd', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
+
+    telescope_mapper('<leader>ca', 'lsp_code_actions', nil, true)
+    telescope_mapper('<leader>fw', 'lsp_workspace_symbols', { ignore_filename = true }, true)
 
     -- Few language server support these atm
     map('n', '<leader>vbf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
