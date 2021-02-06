@@ -31,33 +31,15 @@ vmap('<C-k>', '10k')
 nmap('j', 'gj')
 nmap('k', 'gk')
 
--- save file
-nmap('<c-s>', ':w<CR>')
-imap('<c-s>', '<Esc>:w<CR>')
-
 -- install plugins
 nmap('<leader>pi', ':PlugInstall<CR>')
 nmap('<leader>pc', ':PlugClean<CR>')
-
--- no more pesky escape (for insert and visual mode)
-imap('jj', '<Esc>')
 
 -- move between window like butter
 nmap('<leader>h', ':wincmd h<CR>')
 nmap('<leader>j', ':wincmd j<CR>')
 nmap('<leader>k', ':wincmd k<CR>')
 nmap('<leader>l', ':wincmd l<CR>')
-
--- quick movements
-imap('II', '<Esc>I')
-imap('AA', '<Esc>A')
-imap('OO', '<Esc>O')
-
--- line modifications
-imap('CC', '<Esc>C')
-imap('SS', '<Esc>S')
-imap('DD', '<Esc>dd')
-imap('UU', '<Esc>u')
 
 -- move text up and down
 nmap('<A-j>', ':m .+1<CR>')
@@ -85,11 +67,6 @@ nmap('<leader>P', '"+p')
 -- tab control
 nmap('<A-l>', ':tabnext<CR>')
 nmap('<A-h>', ':tabprevious<CR>')
-
--- add new line up and down without insert mode
--- nmap('<C-o>','O<Esc>')
-nmap('<CR>','o<Esc>')
--- }}}
 
 -- git specific maps{{{
 nmap('<leader>gs', ':G<CR>')
