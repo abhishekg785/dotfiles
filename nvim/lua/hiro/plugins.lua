@@ -35,6 +35,7 @@ return require('packer').startup {
         use 'nvim-lua/popup.nvim'
         use 'nvim-lua/plenary.nvim'
         use 'nvim-telescope/telescope.nvim'
+        use 'nvim-telescope/telescope-fzy-native.nvim'
         use 'machakann/vim-highlightedyank'
         use 'editorconfig/editorconfig-vim'
         use 'unblevable/quick-scope'
@@ -45,7 +46,6 @@ return require('packer').startup {
         use 'tpope/vim-fugitive'
         use 'tpope/vim-rhubarb'
         use 'rbong/vim-flog'
-        use 'airblade/vim-gitgutter'
         use 'danishprakash/vim-githubinator'
         use 'neovim/nvim-lspconfig'
         use 'nvim-lua/completion-nvim'
@@ -53,6 +53,7 @@ return require('packer').startup {
         use 'honza/vim-snippets'
         use 'vim-airline/vim-airline'
         use 'mattn/vim-goimports'
+        use 'maxmellon/vim-jsx-pretty'
         use 'nvim-treesitter/nvim-treesitter'
         use 'nvim-treesitter/playground'
     end
